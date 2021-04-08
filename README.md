@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Chat bot demo React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Представьте себе чат канал в slack, в этом чате есть несколько участников и бот Гена. Допустим у всех пользователей slack канала есть виртуальные яблоки. Пользователи могут делиться своими яблоками с другими пользователями внутри одного slack канала.
 
-## Available Scripts
+Для того чтобы пользователь “А” отправил яблоки пользователю “Б” достаточно написать в общий чат простую команду:
 
-In the project directory, you can run:
+<@analoliy> :apple: :apple: - это означает, что пользователю по имени Анатолий будет отправлено 2 яблока
 
-### `npm start`
+Варианты сообщений:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- <@dmitry> <@anatoliy> :apple: :apple: - мы только что отправили Дмитрийю и Анатолию по два яблока.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- дарю яблоки другу диме <@dmitry> :apple: :apple: :pear: - Пользователь Дмитрий получит 2 яблока. Поскольку у нас нету бонусов в виде :pear: этот символ будет игнорироваться
 
-### `npm test`
+- <@dmitry> лови свои яблоки <@victor> и ты тоже :apple: :apple: :apple: - Дмитрий и Виктор получили по 3 яблока
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- <@victor> держи :apple: :apple: <@dmitry> - Виктор получит 2 яблока, Дмитрий получит 0 яблок
 
-### `npm run build`
+- :apple: :apple: <@victor> <@dmitry> - Оба пользователя получат 0 яблок
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- :apple:     :apple:        <@dmitry>        <@victor>     :apple:       :apple: - Дмитрий и Виктор получают по 2 яблока.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- <@victor> :apple: :apple: <@dmitry> <@victor> :apple: <@maria> :apple: :grape: - Виктор получает 3 яблока, Дмитрий 1 яблоко, Мария 1 яблоко
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+ЗАДАЧА:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Написать функцию, которая в качестве аргумента получает любой текст.  В качестве результата функция должна посчитать кому и сколько яблок нужно перевести.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Примечания:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Текст может быть любой, бот Гена должен игнорировать сообщения не связанные с отправкой яблок
+2. Внимательно изучите примеры сообщений для отправки яблок друзьям.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
